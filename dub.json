@@ -1,0 +1,9 @@
+{
+	"name": "math",
+	"authors": [
+		"Wesley"
+	],
+	"description": "A math application for finding significant values from sets of numbers.",
+	"copyright": "Copyright © 2017, Wesley",
+	"license": "No License"
+}
