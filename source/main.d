@@ -1,15 +1,10 @@
 import std.stdio, std.getopt;
-//import libMath;
 
 ulong getInp (bool help, bool file, bool inp, string[] args);
-void printHelp();
-ulong big (ulong[] numbs);
 ulong lcm (ulong[] numbs);
 
 int main(string[] args) {
-	ulong[] numbs;
-	int i;
-	File input;
+	ulong[] numbs = null;
 	bool help = false, inp = false, file = false;
 	
 	try {
@@ -20,11 +15,11 @@ int main(string[] args) {
 		return 1;
 	}
 	
-	//numbs[] = getInp(help, file, inp, args);
+	numbs[] = getInp(help, file, inp, args);
 	if (numbs[] == null) {
 		return 0;
 	}
 	
-	//writeln("The least common multiple of ", numbs, " is ", lcm(numbs), ".");
+	writeln("The least common multiple of ", numbs, " is ", lcm(numbs), ".");
 	return 0;
 }

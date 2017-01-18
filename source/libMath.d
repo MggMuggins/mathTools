@@ -1,18 +1,33 @@
 import std.stdio, std.string, std.conv, std.file;
 
-ulong[] getInp (bool help, bool file, bool inp, string[] args) {
+void printHelp() {
+	writeln("Help Sheet:");
+	writeln("My program to find different significant values from a set of inputs.");
+	writeln("Input values via args and/or Files. Any arguments left after defined POSIX args are parsed");
+	writeln("are read into the input array. ");
+	writeln();
+	writeln("Options:");
+	writeln("--help, -h");
+	writeln("		Display this help and exits.");
+	writeln("--input, -i");
+	writeln("		Uses numerical arguments as input.");
+	writeln("--file, -f");
+	writeln("		Reads input from a file instead of taking command line args.");
+}
+
+extern ulong[] getInp (bool help, bool file, bool inp, string[] args) {
 	ulong[] numbs;
 	int i = 0;
 	File input;
 	if ((help == true && inp == true) || (help == true && file == true)) {
 		printHelp();
-		return null;
+		return numbs;
 	} if (file == true && inp == true) {
 		writeln("Reading from two different input methods is not currently supported.");
-		return null;
+		return numbs;
 	} if (help == true) {
 		printHelp();
-		return null;
+		return numbs;
 	} if (inp == true && file == false) {
 		for(i = 0; i < args.length; ++i) {
 			numbs[i] = to!ulong(args[i]);
@@ -28,21 +43,6 @@ ulong[] getInp (bool help, bool file, bool inp, string[] args) {
 	return numbs;
 }
 
-void printHelp() {
-	writeln("Help Sheet:");
-	writeln("My set of programs to find different significant values from a set of inputs.");
-	writeln("Input values via args and/or Files. Any arguments left after defined POSIX args are parsed");
-	writeln("are read into the input array. ");
-	writeln();
-	writeln("Options:");
-	writeln("--help, -h");
-	writeln("		Display this help and exits.");
-	writeln("--input, -i");
-	writeln("		Uses numerical arguments as input.");
-	writeln("--file, -f");
-	writeln("		Reads input from a file instead of taking command line args.");
-}
-
 ulong big (ulong[] numbs) {
 	ulong big = numbs[0];
 	foreach(i; numbs) {
@@ -53,7 +53,7 @@ ulong big (ulong[] numbs) {
 	return big;
 }
 
-ulong lcm (ulong[] numbs) {
+extern ulong lcm (ulong[] numbs) {
 	bool comMult = false;
 	int i;
 	ulong lcm = big(numbs);
