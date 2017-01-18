@@ -2,9 +2,10 @@ import std.stdio, std.getopt;
 
 extern(C) ulong getInp (bool help, bool file, bool inp, string[] args);
 extern(C) ulong lcm (ulong[] numbs);
+extern(C) ulong gcf (ulong[] numbs);
 
 int main(string[] args) {
-	ulong[] numbs = null;
+	ulong[] numbs;
 	bool help = false, inp = false, file = false;
 	
 	try {
@@ -15,11 +16,15 @@ int main(string[] args) {
 		return 1;
 	}
 	
-	numbs[] = getInp(help, file, inp, args);
-	if (numbs[] == null) {
-		return 0;
-	}
+	writeln(args);
 	
-	writeln("The least common multiple of ", numbs, " is ", lcm(numbs), ".");
+	numbs ~= 0;
+	numbs[] = getInp(help, file, inp, args);
+	//An attempt to determine if Numbs is empty. Any better solution is wanted.
+	//if (numbs[0] == 0) {
+	//	return 42;
+	//}
+	
+	writeln(numbs);
 	return 0;
 }
