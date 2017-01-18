@@ -1,7 +1,7 @@
 import std.stdio, std.getopt;
 
-ulong getInp (bool help, bool file, bool inp, string[] args);
-ulong lcm (ulong[] numbs);
+extern(C) ulong getInp (bool help, bool file, bool inp, string[] args);
+extern(C) ulong lcm (ulong[] numbs);
 
 int main(string[] args) {
 	ulong[] numbs = null;

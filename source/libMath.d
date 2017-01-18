@@ -15,7 +15,7 @@ void printHelp() {
 	writeln("		Reads input from a file instead of taking command line args.");
 }
 
-extern ulong[] getInp (bool help, bool file, bool inp, string[] args) {
+extern(C) ulong[] getInp (bool help, bool file, bool inp, string[] args) {
 	ulong[] numbs;
 	int i = 0;
 	File input;
@@ -53,7 +53,7 @@ ulong big (ulong[] numbs) {
 	return big;
 }
 
-extern ulong lcm (ulong[] numbs) {
+extern(C) ulong lcm (ulong[] numbs) {
 	bool comMult = false;
 	int i;
 	ulong lcm = big(numbs);
