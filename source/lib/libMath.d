@@ -1,3 +1,5 @@
+module lib;
+
 import std.stdio, std.string, std.conv, std.file;
 
 void printHelp() {
@@ -8,14 +10,14 @@ void printHelp() {
 	writeln();
 	writeln("Options:");
 	writeln("--help, -h");
-	writeln("		Display this help and exits.");
+	writeln("		Display this help and exits. Overrides all other arguments.");
 	writeln("--input, -i");
 	writeln("		Uses numerical arguments as input.");
 	writeln("--file, -f");
 	writeln("		Reads input from a file instead of taking command line args.");
 }
 
-extern ulong[] getInp (bool help, bool file, bool inp, string[] args) {
+/* extern(C) */ulong[] getInp (bool help, bool file, bool inp, string[] args) {
 	ulong[] numbs;
 	int i = 0;
 	File input;
@@ -29,17 +31,18 @@ extern ulong[] getInp (bool help, bool file, bool inp, string[] args) {
 		printHelp();
 		return numbs;
 	} if (inp == true && file == false) {
-		for(i = 0; i < args.length; ++i) {
-			numbs[i] = to!ulong(args[i]);
+		for(i = 1; i < args.length; ++i) {
+			numbs ~= to!ulong(args[i]);
 		}
 	} if (file == true && inp == false) {
-		input = File(args[0], "r");
+		input = File(args[1], "r");
 		while (!input.eof()) {
 			i = 0;
 			numbs[i] = to!ulong(strip(file.readln()));
 			++i;
 		}
 	}
+	writeln(numbs);
 	return numbs;
 }
 
@@ -53,20 +56,26 @@ ulong big (ulong[] numbs) {
 	return big;
 }
 
-extern ulong lcm (ulong[] numbs) {
+/* extern(C) */ulong lcm (ulong[] numbs) {
 	bool comMult = false;
 	int i;
-	ulong lcm = big(numbs);
+	ulong cand = big(numbs);
 	while (comMult == false) {
 		for(i = 0; i < numbs.length; ++i) {
-			if (lcm % numbs[i] != 0) {
+			if (cand % numbs[i] != 0) {
 				comMult = false;
 				break;
 			} 
 		} if (i == numbs.length) {
 			comMult = true;
 		}
-		++lcm;
+		++cand;
 	}
-	return lcm;
+	return cand;
+}
+
+/* extern(C) */ulong gcf (ulong[] numbs) {
+	ulong cand;
+	
+	return cand;
 }
