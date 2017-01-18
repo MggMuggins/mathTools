@@ -1,8 +1,11 @@
-import std.stdio, std.getopt;
+module main;
 
-extern(C) ulong getInp (bool help, bool file, bool inp, string[] args);
-extern(C) ulong lcm (ulong[] numbs);
-extern(C) ulong gcf (ulong[] numbs);
+import std.stdio, std.getopt;
+import lib;
+
+// extern(C) */ulong getInp (bool help, bool file, bool inp, string[] args);
+// extern(C) */ulong lcm (ulong[] numbs);
+// extern(C) */ulong gcf (ulong[] numbs);
 
 int main(string[] args) {
 	ulong[] numbs;
@@ -18,7 +21,6 @@ int main(string[] args) {
 	
 	writeln(args);
 	
-	numbs ~= 0;
 	numbs[] = getInp(help, file, inp, args);
 	//An attempt to determine if Numbs is empty. Any better solution is wanted.
 	//if (numbs[0] == 0) {

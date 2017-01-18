@@ -1,3 +1,5 @@
+module lib;
+
 import std.stdio, std.string, std.conv, std.file;
 
 void printHelp() {
@@ -15,7 +17,7 @@ void printHelp() {
 	writeln("		Reads input from a file instead of taking command line args.");
 }
 
-extern(C) ulong[] getInp (bool help, bool file, bool inp, string[] args) {
+/* extern(C) */ulong[] getInp (bool help, bool file, bool inp, string[] args) {
 	ulong[] numbs;
 	int i = 0;
 	File input;
@@ -54,7 +56,7 @@ ulong big (ulong[] numbs) {
 	return big;
 }
 
-extern(C) ulong lcm (ulong[] numbs) {
+/* extern(C) */ulong lcm (ulong[] numbs) {
 	bool comMult = false;
 	int i;
 	ulong cand = big(numbs);
@@ -72,7 +74,7 @@ extern(C) ulong lcm (ulong[] numbs) {
 	return cand;
 }
 
-extern(C) ulong gcf (ulong[] numbs) {
+/* extern(C) */ulong gcf (ulong[] numbs) {
 	ulong cand;
 	
 	return cand;
