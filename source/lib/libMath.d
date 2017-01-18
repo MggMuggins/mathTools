@@ -17,7 +17,7 @@ void printHelp() {
 	writeln("		Reads input from a file instead of taking command line args.");
 }
 
-/* extern(C) */ulong[] getInp (bool help, bool file, bool inp, string[] args) {
+ulong[] getInp (bool help, bool file, bool inp, string[] args) {
 	ulong[] numbs;
 	int i = 0;
 	File input;
@@ -46,9 +46,11 @@ void printHelp() {
 	return numbs;
 }
 
+//big finds the largest number out of the contents of the array provided
 ulong big (ulong[] numbs) {
 	ulong big = numbs[0];
-	foreach(i; numbs) {
+	int i;
+	for (i = 1; i < numbs.length; ++i) {
 		if (i > big) {
 			big = numbs[i];
 		}
@@ -56,7 +58,9 @@ ulong big (ulong[] numbs) {
 	return big;
 }
 
-/* extern(C) */ulong lcm (ulong[] numbs) {
+//lcm Finds the lcm of the contents of the array that is given to it
+ulong lcm (ulong[] numbs) {
+	//Needs Optimizations
 	bool comMult = false;
 	int i;
 	ulong cand = big(numbs);
@@ -66,15 +70,18 @@ ulong big (ulong[] numbs) {
 				comMult = false;
 				break;
 			} 
-		} if (i == numbs.length) {
-			comMult = true;
-		}
+		} 
 		++cand;
+		if (i == numbs.length) {
+			comMult = true;
+			--cand;
+		}
 	}
 	return cand;
 }
 
-/* extern(C) */ulong gcf (ulong[] numbs) {
+//gcf will find the gcf of the contents of the array that is given to it
+ulong gcf (ulong[] numbs) {
 	ulong cand;
 	
 	return cand;
