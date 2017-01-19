@@ -1,12 +1,12 @@
-module lib.lcm;
+module lib.lcmOf;
 
-import lib.big;
+import lib.findbig;
 
 //lcm Finds the lcm of the contents of the array that is given to it
 ulong lcmOf (ulong[] numbs) {
 	//Needs Optimizations
 	int i;
-	ulong cand = largest(numbs);
+	ulong cand = findBig(numbs);
 	while (1) {
 		for(i = 0; i < numbs.length; ++i) {
 			if (cand % numbs[i] != 0) {

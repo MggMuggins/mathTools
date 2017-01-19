@@ -1,4 +1,4 @@
-module lib.help;
+module lib.printhelp;
 
 import std.stdio;
 

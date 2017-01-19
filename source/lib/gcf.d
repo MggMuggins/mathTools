@@ -1,11 +1,11 @@
-module lib.gcf;
+module lib.gcfOf;
 
-import lib.small;
+import lib.findsmall;
 
 //gcf will find the gcf of the contents of the array that is given to it
 ulong gcfOf (ulong[] numbs) {
 	//Needs Optimizations
-	ulong cand = smallest(numbs) + 1;
+	ulong cand = findSmall(numbs) + 1;
 	int i;
 	while (1) {
 	--cand;

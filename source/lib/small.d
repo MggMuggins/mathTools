@@ -1,7 +1,7 @@
-module lib.small;
+module lib.findsmall;
 
 //small finds the smallest number out of the contents of the array provided
-ulong smallest (ulong[] numbs) {
+ulong findSmall (ulong[] numbs) {
 	ulong small = numbs[0];
 	int i;
 	for (i = 1; i < numbs.length; ++i) {

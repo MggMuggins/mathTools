@@ -1,29 +1,16 @@
 import std.stdio, std.getopt;
-import lib.inp, lib.put;
+import lib.getinput, lib.printout, lib.getargs, data.argstate;
 
 int main(string[] args) {
 	ulong[] numbs;
-	bool help = false, inp = false, file = false, gcf = false, lcm = false;
+	argState argsState = getArgs(args);
 	
-	try {
-		getopt(args, "help|h", &help, "input|i", &inp, "file|f", &file, "lcm|l", &lcm, "gcf|g", &gcf);
-	} catch (std.conv.ConvException exc) {
-		writeln("Problem with args:");
-		writeln(exc.msg);
-		return 1;
-	} catch  (std.getopt.GetOptException exc) {
-		writeln("Problem with args:");
-		writeln(exc.msg);
-		return 1;
-	}
-	
-	//writeln(args);
-	numbs = getInp(help, file, inp, args);
+	numbs = getInp(argsState, args);
 	//An attempt to determine if Numbs is empty. Any better solution is wanted.
 	if (numbs == null) {
 		return 42;
 	}
 	
-	printOut(numbs, lcm, gcf);
+	printOut(numbs, argsState);
 	return 0;
 }

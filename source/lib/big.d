@@ -1,7 +1,6 @@
-module lib.big;
+module lib.findbig;
 
-//big finds the largest number out of the contents of the array provided
-ulong largest (ulong[] numbs) {
+ulong findBig (ulong[] numbs) {
 	ulong big = numbs[0];
 	int i;
 	for (i = 1; i < numbs.length; ++i) {
