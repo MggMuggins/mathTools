@@ -1,5 +1,5 @@
 import std.stdio, std.getopt;
-import lib;
+import lcm, gcf, inp;
 
 int main(string[] args) {
 	ulong[] numbs;
@@ -12,14 +12,13 @@ int main(string[] args) {
 		writeln(exc.msg);
 		return 1;
 	}
-	writeln(args);
-	numbs  ~= 0;
+	//writeln(args);
 	numbs = getInp(help, file, inp, args);
 	//An attempt to determine if Numbs is empty. Any better solution is wanted.
-	if (numbs[0] == 0) {
+	if (numbs == null) {
 		return 42;
 	}
 	
-	writeln(lcm(numbs));
+	writeln(gcfOf(numbs));
 	return 0;
 }
