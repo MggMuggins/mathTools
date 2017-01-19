@@ -28,7 +28,7 @@ ulong[] getInp (bool help, bool file, bool inp, string[] args) {
 	} if (file && inp == false) {
 		input = File(args[1], "r");
 		while (!input.eof()) {
-			//Makes sure not to try and convert nothing to ulong, and exits if file has no numbers
+			//Makes sure not to try and convert nothing to ulong, and exits if file has anything other than numbers
 			try {
 				numbs ~= to!ulong(strip(input.readln()));
 			} catch (std.conv.ConvException) {
