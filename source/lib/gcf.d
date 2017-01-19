@@ -7,16 +7,14 @@ ulong gcfOf (ulong[] numbs) {
 	//Needs Optimizations
 	ulong cand = smallest(numbs) + 1;
 	int i;
-	bool comFact = false;
-	while (comFact == false) {
+	while (1) {
 	--cand;
 		for(i = 0; i < numbs.length; ++i) {
 			if (numbs[i] % cand != 0) {
-				comFact = false;
 				break;
 			} 
 		} if (i == numbs.length) {
-			comFact = true;
+			break;
 		}
 	}
 	return cand;

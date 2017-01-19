@@ -5,7 +5,6 @@ import lib.help;
 
 ulong[] getInp (bool help, bool file, bool inp, string[] args) {
 	ulong[] numbs;
-	string carry;
 	int i = 0;
 	File input;
 	
@@ -29,11 +28,12 @@ ulong[] getInp (bool help, bool file, bool inp, string[] args) {
 	} if (file && inp == false) {
 		input = File(args[1], "r");
 		while (!input.eof()) {
-			carry = strip(input.readln());
-			//Makes sure not to try and convert nothing to ulong
-			if (!input.eof()) {
-				numbs ~= to!ulong(carry);
-			}
+			//Makes sure not to try and convert nothing to ulong, and exits if file has no numbers
+			try {
+				numbs ~= to!ulong(strip(input.readln()));
+			} catch (std.conv.ConvException) {
+				break;
+			} 
 		}
 	}
 	return numbs;

@@ -5,21 +5,17 @@ import lib.big;
 //lcm Finds the lcm of the contents of the array that is given to it
 ulong lcmOf (ulong[] numbs) {
 	//Needs Optimizations
-	bool comMult = false;
 	int i;
 	ulong cand = largest(numbs);
-	while (comMult == false) {
+	while (1) {
 		for(i = 0; i < numbs.length; ++i) {
 			if (cand % numbs[i] != 0) {
-				comMult = false;
 				break;
 			} 
-		} 
-		++cand;
-		if (i == numbs.length) {
-			comMult = true;
-			--cand;
+		} if (i == numbs.length) {
+			break;
 		}
+		++cand;
 	}
 	return cand;
 }
