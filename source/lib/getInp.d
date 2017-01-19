@@ -1,7 +1,7 @@
-module inp;
+module lib.inp;
 
 import std.stdio, std.conv, std.file, std.string;
-import help;
+import lib.help;
 
 ulong[] getInp (bool help, bool file, bool inp, string[] args) {
 	ulong[] numbs;
@@ -10,36 +10,31 @@ ulong[] getInp (bool help, bool file, bool inp, string[] args) {
 	File input;
 	
 	//Help and Errors...
-	if ((help == true && inp == true) || (help == true && file == true)) {
+	if ((help && inp) || (help && file)) {
 		printHelp();
 		return numbs;
-	} if (file == true && inp == true) {
+	} if (file && inp) {
 		writeln("Reading from two different input methods is not currently supported.");
 		return numbs;
-	} if (help == true) {
+	} if (help) {
 		printHelp();
 		return numbs;
 	} 
 	
 	//Actual Read Methods...
-	if (inp == true && file == false) {
+	if (inp && file == false) {
 		for(i = 1; i < args.length; ++i) {
 			numbs ~= to!ulong(args[i]);
 		}
-	} if (file == true && inp == false) {
+	} if (file && inp == false) {
 		input = File(args[1], "r");
 		while (!input.eof()) {
-			i = 0;
-			//This isn't working. It's hanging on line 35 and not continuing with execution, with only one condition check.
-			writeln(i);
-			//Carry is defined to split up the error for debugging. It will be removed before the release
-			carry = strip(file.readln());
-			
-			writeln(carry);
-			numbs ~= to!ulong(carry);
-			++i;
+			carry = strip(input.readln());
+			//Makes sure not to try and convert nothing to ulong
+			if (!input.eof()) {
+				numbs ~= to!ulong(carry);
+			}
 		}
 	}
-	writeln(numbs);
 	return numbs;
 }

@@ -1,5 +1,5 @@
 import std.stdio, std.getopt;
-import lcm, gcf, inp;
+import lib.lcm, lib.gcf, lib.inp;
 
 int main(string[] args) {
 	ulong[] numbs;

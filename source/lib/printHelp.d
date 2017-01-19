@@ -1,4 +1,4 @@
-module help;
+module lib.help;
 
 import std.stdio;
 

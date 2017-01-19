@@ -1,6 +1,6 @@
-module gcf;
+module lib.gcf;
 
-import small;
+import lib.small;
 
 //gcf will find the gcf of the contents of the array that is given to it
 ulong gcfOf (ulong[] numbs) {

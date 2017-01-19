@@ -1,4 +1,4 @@
-module big;
+module lib.big;
 
 //big finds the largest number out of the contents of the array provided
 ulong largest (ulong[] numbs) {
