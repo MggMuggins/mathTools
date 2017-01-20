@@ -6,7 +6,12 @@ import data.argstate;
 argState getArgs (string[] args) {
 	argState argsState;
 	try {
-		getopt(args, "help|h", &argsState.help, "input|i", &argsState.inp, "file|f", &argsState.file, "lcm|l", &argsState.lcm, "gcf|g", &argsState.gcf);
+		getopt(args, 
+			"help|h", &argsState.help, 
+			"input|i", &argsState.inp, 
+			"file|f", &argsState.file, 
+			"lcm|l", &argsState.lcm, 
+			"gcf|g", &argsState.gcf);
 	} catch (std.conv.ConvException exc) {
 		writeln("Problem with args:");
 		writeln(exc.msg);
