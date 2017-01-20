@@ -1,4 +1,4 @@
-module lib.printhelp;
+module uio.printhelp;
 
 import std.stdio;
 
@@ -19,7 +19,7 @@ void printHelp() {
 	writeln("--file, -f");
 	writeln("		Reads input from a file instead of taking command line args.");
 	writeln("--gcf, -g");
-	writeln("		Prints the gcf as part of the output. Uses 'GCF = <output' as output format.");
+	writeln("		Prints the gcf as part of the output. Uses 'GCF = <output>' as output format.");
 	writeln("--lcm, -l");
-	writeln("		Prints the lcm as part of the output. Uses 'LCM = <output' as output format.");
+	writeln("		Prints the lcm as part of the output. Uses 'LCM = <output>' as output format.");
 }

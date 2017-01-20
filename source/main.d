@@ -1,5 +1,5 @@
 import std.stdio, std.getopt;
-import lib.getinput, lib.printout, lib.getargs, data.argstate;
+import uio.getinput, uio.printout, uio.getargs, data.argstate;
 
 int main(string[] args) {
 	ulong[] numbs;

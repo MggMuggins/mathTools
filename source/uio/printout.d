@@ -1,7 +1,7 @@
-module lib.printout;
+module uio.printout;
 
 import std.stdio;
-import lib.gcfOf, lib.lcmOf, lib.getinput, data.argstate;
+import oprtn.gcfof, oprtn.lcmof, data.argstate;
 
 void printOut (ulong[] numbs, argState args) {
 	if (args.lcm) {

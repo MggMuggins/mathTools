@@ -1,4 +1,4 @@
-module lib.getargs;
+module uio.getargs;
 
 import std.stdio, std.string, std.getopt;
 import data.argstate;

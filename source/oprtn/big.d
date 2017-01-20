@@ -1,4 +1,4 @@
-module lib.findbig;
+module oprtn.findbig;
 
 ulong findBig (ulong[] numbs) {
 	ulong big = numbs[0];
