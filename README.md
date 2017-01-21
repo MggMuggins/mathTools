@@ -39,4 +39,6 @@ Building is fairly straightforward, as this is a dub project. Simply ```cd``` in
 # Contributing
 Fork this repo, clone it locally, and make changes! When you're ready, push your local changes to your fork, and then open a pull request!
 
+See codemap.txt for a mapping of all functions.
+
 To learn D, visit http://www.Dlang.org
