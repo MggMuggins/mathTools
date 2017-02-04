@@ -1,9 +1,9 @@
 {
 	"name": "math",
 	"authors": [
-		"Wesley"
+		"SamwiseFilmore"
 	],
 	"description": "A math application for finding significant values from sets of numbers.",
-	"copyright": "Copyright © 2017, Wesley",
-	"license": "No License"
+	"copyright": "Copyright © 2017, SamwiseFilmore",
+	"license": "MPL-2.0"
 }
