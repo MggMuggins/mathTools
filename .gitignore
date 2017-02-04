@@ -5,3 +5,6 @@ __dummy.html
 *.obj
 __test__*__
 math
+.dlangidews
+.dlangidews.wssettings
+math.settings
