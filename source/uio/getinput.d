@@ -6,13 +6,12 @@
 
 module uio.getinput;
 
-import std.stdio;
+import std.stdio : writeln;
 import uio.printhelp, uio.read, data.argstate;
 
 ulong[] getInp (argState args, string[] arguments) {
 	ulong[] numbs;
 	int i = 0;
-	File input;
 	
 	if ((args.help && args.inp) || (args.help && args.file)) {
 		printHelp();

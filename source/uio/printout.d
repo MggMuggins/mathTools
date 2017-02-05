@@ -1,6 +1,6 @@
 module uio.printout;
 
-import std.stdio;
+import std.stdio : writeln;
 import oprtn.gcfof, oprtn.lcmof, data.argstate;
 
 void printOut (ulong[] numbs, argState args) {

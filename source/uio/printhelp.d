@@ -1,6 +1,6 @@
 module uio.printhelp;
 
-import std.stdio;
+import std.stdio : writeln;
 
 void printHelp() {
 	writeln("Help Sheet:");

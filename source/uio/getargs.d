@@ -1,6 +1,7 @@
 module uio.getargs;
 
-import std.stdio, std.string, std.getopt;
+import std.stdio : writeln; 
+import std.getopt;
 import data.argstate;
 
 argState getArgs (string[] args) {

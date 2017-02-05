@@ -1,6 +1,9 @@
 module uio.read;
 
-import std.stdio, std.conv, std.file, std.string;
+import std.file; 
+import std.stdio;
+import std.conv : to;
+import std.string : strip;
 
 ulong[] readInput (string[] args) {
 	int i = 1;

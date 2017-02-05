@@ -1,4 +1,3 @@
-import std.stdio;
 import uio.getinput, uio.printout, uio.getargs, data.argstate;
 
 int main(string[] args) {
