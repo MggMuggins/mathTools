@@ -13,21 +13,18 @@ ulong[] getInp (argState args, string[] arguments) {
 	ulong[] numbs;
 	int i = 0;
 	
-	if ((args.help && args.inp) || (args.help && args.file)) {
+	if ((args.help && args.inp) || (args.help && args.file) || args.help) {
 		printHelp();
 		return numbs;
-	} if (args.file && args.inp) {
-		writeln("Reading from two different input methods is not currently supported.");
-		return numbs;
-	} if (args.help) {
-		printHelp();
-		return numbs;
-	} 
+	}
 	
-	if (args.inp && args.file == false) {
+	if ((args.file !is null) && args.inp) {
+		numbs = readInput(arguments) ~ readFile(args.file);
+		return numbs;
+	} if (args.inp) {
 		numbs = readInput(arguments);
-	} if (args.file && args.inp == false) {
-		numbs = readFile(arguments);
+	} if (args.file !is null) {
+		numbs = readFile(args.file);
 	}
 	return numbs;
 }

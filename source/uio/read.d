@@ -18,27 +18,16 @@ ulong[] readInput (string[] args) {
 	return numbs;
 }
 
-ulong[] readFile (string[] args) {
-	int i = 1;
+ulong[] readFile(string path) {
 	ulong[] numbs;
-	File input;
-	for(i = 1; i < args.length; ++i) {
+	File input = File(path, "r");
+	while (!input.eof()) {
+		//Makes sure not to try and convert nothing to ulong, and exits if file has anything other than numbers
 		try {
-			input = File(args[i], "r");
-		} catch (std.exception.ErrnoException) {
+			numbs ~= to!ulong(strip(input.readln()));
+		} catch (std.conv.ConvException) {
+			break;
 		}
-	} try {
-		while (!input.eof()) {
-			//Makes sure not to try and convert nothing to ulong, and exits if file has anything other than numbers
-			try {
-				numbs ~= to!ulong(strip(input.readln()));
-			} catch (std.conv.ConvException) {
-				break;
-			}
-		}
-	} catch (object.Exception) {
-		writeln("Improper Arg Usage; Include a file path!");
-		return numbs;
 	}
 	return numbs;
 }
