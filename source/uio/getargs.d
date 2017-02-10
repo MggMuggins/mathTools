@@ -22,5 +22,6 @@ argState getArgs (string[] args) {
 		writeln(exc.msg);
 		return argsState;
 	}
+	argsState.args = args;
 	return argsState;
 }

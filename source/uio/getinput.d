@@ -9,7 +9,7 @@ module uio.getinput;
 import std.stdio : writeln;
 import uio.printhelp, uio.read, data.argstate;
 
-ulong[] getInp (argState args, string[] arguments) {
+ulong[] getInp (argState args) {
 	ulong[] numbs;
 	int i = 0;
 	
@@ -19,10 +19,10 @@ ulong[] getInp (argState args, string[] arguments) {
 	}
 	
 	if ((args.file !is null) && args.inp) {
-		numbs = readInput(arguments) ~ readFile(args.file);
+		numbs = readInput(args.args) ~ readFile(args.file);
 		return numbs;
 	} if (args.inp) {
-		numbs = readInput(arguments);
+		numbs = readInput(args.args);
 	} if (args.file !is null) {
 		numbs = readFile(args.file);
 	}

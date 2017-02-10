@@ -6,4 +6,5 @@ struct argState {
 	string file;
 	bool lcm = false;
 	bool gcf = false;
+	string[] args;
 }
