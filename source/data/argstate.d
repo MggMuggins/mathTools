@@ -1,6 +1,7 @@
 module data.argstate;
 
 struct ArgState {
+	string[] args;
 	bool help = false;
 	bool inp = false;
 	string file;
@@ -8,5 +9,4 @@ struct ArgState {
 	bool gcf = false;
 	bool big = false;
 	bool small = false;
-	string[] args;
 }

@@ -20,27 +20,29 @@ Options:
 --help, -h
 
   Display this help and exits. Overrides all other arguments.
-		
+
 --input, -i
 
    Uses numerical arguments as input. This option must be specified to take arguments!
-		
+
 --file, -f
 
    Reads input from a file specified as the next argument in the command. This must be a full file path!
-		
+
 --gcf, -g
 
    Prints the gcf of the input as part of the output. Uses 'GCF = [output]' as output format.
-		
+
 --lcm, -l
 
   Prints the lcm of the input as part of the output. Uses 'LCM = [output]' as output format.
-  
+
 --big, -b
+
   Prints the largest number from the input as part of the output. Uses 'Big = [output]' as output format.
-  
+
 --small, -s
+
   Prints the smallest number from the input as part of the output. Uses 'Small = [output]' as output format.
 
 # Building
