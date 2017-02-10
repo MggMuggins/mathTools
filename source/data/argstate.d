@@ -1,6 +1,6 @@
 module data.argstate;
 
-struct argState {
+struct ArgState {
 	bool help = false;
 	bool inp = false;
 	string file;

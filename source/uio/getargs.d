@@ -4,24 +4,24 @@ import std.stdio : writeln;
 import std.getopt;
 import data.argstate;
 
-argState getArgs (string[] args) {
-	argState argsState;
+ArgState getArgs (string[] args) {
+	ArgState argState;
 	try {
 		getopt(args, 
-			"help|h", &argsState.help, 
-			"input|i", &argsState.inp, 
-			"file|f", &argsState.file, 
-			"lcm|l", &argsState.lcm, 
-			"gcf|g", &argsState.gcf);
+			"help|h", &argState.help, 
+			"input|i", &argState.inp, 
+			"file|f", &argState.file, 
+			"lcm|l", &argState.lcm, 
+			"gcf|g", &argState.gcf);
 	} catch (std.conv.ConvException exc) {
 		writeln("Problem with args:");
 		writeln(exc.msg);
-		return argsState;
+		return argState;
 	} catch  (std.getopt.GetOptException exc) {
 		writeln("Problem with args:");
 		writeln(exc.msg);
-		return argsState;
+		return argState;
 	}
-	argsState.args = args;
-	return argsState;
+	argState.args = args;
+	return argState;
 }

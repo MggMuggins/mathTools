@@ -3,10 +3,10 @@ module uio.printout;
 import std.stdio : writeln;
 import oprtn.gcfof, oprtn.lcmof, data.argstate;
 
-void printOut (ulong[] numbs, argState args) {
-	if (args.lcm) {
+void printOut (ulong[] numbs, ArgState argState) {
+	if (argState.lcm) {
 		writeln("LCM = ", lcmOf(numbs));
-	} if (args.gcf) {
+	} if (argState.gcf) {
 		writeln("GCF = ", gcfOf(numbs));
 	}
 }

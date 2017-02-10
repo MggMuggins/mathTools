@@ -9,22 +9,22 @@ module uio.getinput;
 import std.stdio : writeln;
 import uio.printhelp, uio.read, data.argstate;
 
-ulong[] getInp (argState args) {
+ulong[] getInp (ArgState argState) {
 	ulong[] numbs;
 	int i = 0;
 	
-	if ((args.help && args.inp) || (args.help && args.file) || args.help) {
+	if ((argState.help && argState.inp) || (argState.help && argState.file) || argState.help) {
 		printHelp();
 		return numbs;
 	}
 	
-	if ((args.file !is null) && args.inp) {
-		numbs = readInput(args.args) ~ readFile(args.file);
+	if ((argState.file !is null) && argState.inp) {
+		numbs = readInput(argState.args) ~ readFile(argState.file);
 		return numbs;
-	} if (args.inp) {
-		numbs = readInput(args.args);
-	} if (args.file !is null) {
-		numbs = readFile(args.file);
+	} if (argState.inp) {
+		numbs = readInput(argState.args);
+	} if (argState.file !is null) {
+		numbs = readFile(argState.file);
 	}
 	return numbs;
 }
