@@ -12,7 +12,9 @@ ArgState getArgs (string[] args) {
 			"input|i", &argState.inp, 
 			"file|f", &argState.file, 
 			"lcm|l", &argState.lcm, 
-			"gcf|g", &argState.gcf);
+			"gcf|g", &argState.gcf,
+			"big|b", &argState.big,
+			"small|s", &argState.small);
 	} catch (std.conv.ConvException exc) {
 		writeln("Problem with args:");
 		writeln(exc.msg);

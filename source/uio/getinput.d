@@ -1,9 +1,3 @@
-/*
- * Not happy with Var names in this module!
- * Please Help!
- * 
-*/
-
 module uio.getinput;
 
 import std.stdio : writeln;
