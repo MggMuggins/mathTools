@@ -1,4 +1,4 @@
-module oprtn.findsmall;
+module oprtn.small;
 
 //small finds the smallest number out of the contents of the array provided
 ulong findSmall (ulong[] numbs) {

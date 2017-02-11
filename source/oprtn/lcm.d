@@ -1,6 +1,6 @@
-module oprtn.lcmof;
+module oprtn.lcm;
 
-import oprtn.findbig;
+import oprtn.big;
 
 //lcm Finds the lcm of the contents of the array that is given to it
 ulong lcmOf (ulong[] numbs) {

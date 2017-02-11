@@ -1,8 +1,8 @@
 module uio.printout;
 
 import std.stdio : writeln;
-import oprtn.gcfof, oprtn.lcmof;
-import oprtn.findbig, oprtn.findsmall, oprtn.sum, oprtn.product;
+import oprtn.gcf, oprtn.lcm;
+import oprtn.big, oprtn.small, oprtn.sum, oprtn.product;
 import data.argstate;
 
 void printOut (ulong[] numbs, ArgState argState) {
