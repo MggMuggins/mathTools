@@ -14,7 +14,9 @@ ArgState getArgs (string[] args) {
 			"lcm|l", &argState.lcm, 
 			"gcf|g", &argState.gcf,
 			"big|b", &argState.big,
-			"small|s", &argState.small);
+			"small|s", &argState.small,
+			"sum", &argState.sum,
+			"product|p", &argState.product);
 	} catch (std.conv.ConvException exc) {
 		writeln("Problem with args:");
 		writeln(exc.msg);

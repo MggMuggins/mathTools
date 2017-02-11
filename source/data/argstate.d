@@ -9,4 +9,6 @@ struct ArgState {
 	bool gcf = false;
 	bool big = false;
 	bool small = false;
+	bool sum = false;
+	bool product = false;
 }
