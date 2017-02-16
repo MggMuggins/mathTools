@@ -7,14 +7,7 @@ import std.string : strip;
 
 ulong[] readInput (string[] args) {
 	int i = 1;
-	ulong[] numbs;
-	for(i = 1; i < args.length; ++i) {
-		try {
-			numbs ~= to!ulong(args[i]);
-		} catch (std.conv.ConvException) {
-			//Hopefully skip failed conversions
-		}
-	}
+	ulong[] numbs = to!(ulong[])(args[1 .. $]);
 	return numbs;
 }
 
