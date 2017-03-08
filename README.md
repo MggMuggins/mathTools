@@ -60,7 +60,7 @@ Building is fairly straightforward, as this is a dub project. Simply ```cd``` in
 # Contributing
 Fork this repo, clone it locally, and make changes! When you're ready, push your local changes to your fork, and then open a pull request!
 
-See codemap.txt for a mapping of all functions.
+See codemap.md for a mapping of all functions.
 
 More functions are always wanted! If you want to write one, do so and open a pull request! If you don't know how to write one, let me know, and I'll add it!
 
