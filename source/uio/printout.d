@@ -2,7 +2,7 @@ module uio.printout;
 
 import std.stdio : writeln;
 import oprtn.gcf, oprtn.lcm;
-import oprtn.big, oprtn.small, oprtn.sum, oprtn.product;
+import oprtn.big, oprtn.small, oprtn.sum, oprtn.product, oprtn.quicksort;
 import data.argstate;
 
 void printOut (ulong[] numbs, ArgState argState) {
@@ -18,5 +18,7 @@ void printOut (ulong[] numbs, ArgState argState) {
 		writeln("Sum = ", findSum(numbs));
 	} if (argState.product) {
 		writeln("Product = ", findProduct(numbs));
+	} if (argState.sort) {
+		writeln("Sorted = ", quicksort(numbs));
 	}
 }

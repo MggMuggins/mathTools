@@ -3,7 +3,6 @@ module data.argstate;
 struct ArgState {
 	string[] args;
 	bool help = false;
-	bool inp = false;
 	string file;
 	bool lcm = false;
 	bool gcf = false;
@@ -11,4 +10,5 @@ struct ArgState {
 	bool small = false;
 	bool sum = false;
 	bool product = false;
+	bool sort = true;
 }
