@@ -1,7 +1,5 @@
 module oprtn.gcf;
 
-import oprtn.small;
-
 //gcf will find the gcf of the contents of the array that is given to it
 ulong gcfOf (ulong[] numbs, ulong cand) {
 	//Needs Optimizations

@@ -1,7 +1,5 @@
 module oprtn.lcm;
 
-import oprtn.big;
-
 //lcm Finds the lcm of the contents of the array that is given to it
 ulong lcmOf (ulong[] numbs, ulong cand) {
 	//Needs Optimizations

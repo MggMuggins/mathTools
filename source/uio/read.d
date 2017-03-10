@@ -1,13 +1,19 @@
 module uio.read;
 
-import std.file; 
+import std.file;
 import std.stdio;
 import std.conv : to;
 import std.string : strip;
 
 ulong[] readInput (string[] args) {
 	int i = 1;
-	ulong[] numbs = to!(ulong[])(args[1 .. $]);
+	ulong[] numbs;
+	try {
+		numbs = to!(ulong[])(args[1 .. $]);
+	} catch (std.conv.ConvException exc) {
+		writeln("Problem with args:");
+		writeln(exc);
+	}
 	return numbs;
 }
 

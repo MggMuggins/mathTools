@@ -10,13 +10,15 @@ ArgState getArgs (string[] args) {
 		getopt(args,
 			"help|h", &argState.help,
 			"file|f", &argState.file,
-			"lcm|l", &argState.lcm,
-			"gcf|g", &argState.gcf,
-			"big|b", &argState.big,
-			"small|a", &argState.small,
-			"sum|u", &argState.sum,
-			"product|p", &argState.product,
-			"sort|S", &argState.sort);
+			"lcm", &argState.lcm,
+			"gcf", &argState.gcf,
+			"big", &argState.big,
+			"small", &argState.small,
+			"sum", &argState.sum,
+			"product", &argState.product,
+			"sort", &argState.sort,
+			"average", &argState.average,
+			"median", &argState.median);
 	} catch (std.conv.ConvException exc) {
 		writeln("Problem with args:");
 		writeln(exc.msg);
