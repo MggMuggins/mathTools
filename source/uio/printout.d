@@ -2,25 +2,45 @@ module uio.printout;
 
 import std.stdio;
 import std.conv;
-import oprtn.gcf, oprtn.lcm;
-import oprtn.big, oprtn.small, oprtn.sum, oprtn.product, oprtn.quicksort;
+import oprtn.gcf, oprtn.lcm, oprtn.quicksort;
+import oprtn.big, oprtn.small, oprtn.sum, oprtn.product;
 import data.argstate;
 
 void printOut (ulong[] numbs, ArgState argState) {
-	if (argState.lcm) {
-		writeln("LCM = ", lcmOf(numbs));
-	} if (argState.gcf) {
-		writeln("GCF = ", gcfOf(numbs));
-	} if (argState.big) {
-		writeln("Big = ", findBig(numbs));
-	} if (argState.small) {
-		writeln("Small = ", findSmall(numbs));
-	} if (argState.sum) {
-		writeln("Sum = ", findSum(numbs));
+	/* This is only a thing because it limits the number of times the program
+	 * needs to calculate some values to once, reducing CPU usage. This sacrifices
+	 * a tiny bit more RAM (or more than a tiny bit, since the size of the arguments
+	 * array is arbitrary).
+	 */
+	ulong big, small, sum, product, lcm, gcf;
+	ulong[] sorted;
+	//Required values for other functions//
+	if (argState.big || argState.lcm) {
+		big = findBig(numbs);
+		if (argState.big) {
+			writeln("Big = ", big);
+		}
+	} if (argState.small || argState.gcf) {
+		small = findSmall(numbs);
+		if (argState.small) {
+			writeln("Small = ", small);
+		}
+	}
+	//UI only functions//
+	if (argState.sum) {
+		sum = findSum(numbs);
+		writeln("Sum = ", sum);
 	} if (argState.product) {
-		writeln("Product = ", findProduct(numbs));
+		product = findProduct(numbs);
+		writeln("Product = ", product);
+	} if (argState.lcm) {
+		lcm = lcmOf(numbs, small);
+		writeln("LCM = ", lcm);
+	} if (argState.gcf) {
+		gcf = gcfOf(numbs, big);
+		writeln("GCF = ", gcf);
 	} if (argState.sort) {
-		int numbsLength = to!(int)(numbs.length - 1);
-		writeln("Sorted = ", quicksort(numbs, 0, numbsLength));
+		sorted = quicksort(numbs, 0, to!(int)(numbs.length - 1));
+		writeln("Sorted = ", sorted);
 	}
 }
