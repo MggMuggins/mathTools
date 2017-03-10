@@ -51,6 +51,7 @@ Each output uses the output format ```[output string] = [output]```. Each flag i
   Prints the product of all the inputs as a part of the output. Uses 'Product' as output string.
 
 --sort, -s
+
   Sorts input using my implementation of the QuickSort algorithm. Uses "Sorted" as output string.
 
 # Building

@@ -22,6 +22,9 @@ graph LR;
   findBig --> |"ulong cand"| printOut
   printOut --> |"ulong[] numbs"| findSmall{findSmall}
   findSmall --> |"ulong cand"| printOut
+  printOut --> |"ulong[] numbs, 0, numbs.length-1"| quicksort{quicksort}
+  quicksort --> |"ulong[] numbs"| printOut
+  
 ```
 
 ```
