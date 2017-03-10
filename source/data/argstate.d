@@ -10,5 +10,5 @@ struct ArgState {
 	bool small = false;
 	bool sum = false;
 	bool product = false;
-	bool sort = true;
+	bool sort = false;
 }

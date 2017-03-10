@@ -13,10 +13,10 @@ ArgState getArgs (string[] args) {
 			"lcm|l", &argState.lcm,
 			"gcf|g", &argState.gcf,
 			"big|b", &argState.big,
-			"small|sm", &argState.small,
-			"sum|su", &argState.sum,
+			"small|a", &argState.small,
+			"sum|u", &argState.sum,
 			"product|p", &argState.product,
-			"sort|so", &argState.sort);
+			"sort|S", &argState.sort);
 	} catch (std.conv.ConvException exc) {
 		writeln("Problem with args:");
 		writeln(exc.msg);

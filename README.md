@@ -38,11 +38,11 @@ Each output uses the output format ```[output string] = [output]```. Each flag i
 
   Prints the largest number from the input as part of the output. Uses 'Big' as output string.
 
---small, -sm
+--small, -a
 
   Prints the smallest number from the input as part of the output. Uses 'Small' as output string.
 
---sum, -su
+--sum, -u
 
   Prints the sum of all the inputs as part of the output. Uses 'Sum' as output string.
 
@@ -50,7 +50,7 @@ Each output uses the output format ```[output string] = [output]```. Each flag i
 
   Prints the product of all the inputs as a part of the output. Uses 'Product' as output string.
 
---sort, -so
+--sort, -s
   Sorts input using my implementation of the QuickSort algorithm. Uses "Sorted" as output string.
 
 # Building
