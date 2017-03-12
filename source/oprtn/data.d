@@ -10,12 +10,11 @@ ulong getMedian(ulong[] numbs) {
     return median;
 }
 
-/* This REALLY Does not work
 ulong getMode(ulong[] numbs) {
-    Mode[] count;
-    ulong big;
-    //Construct Associative array with each element of numbs as the key, and the count as the element.
-    foreach (var, numbs) {
+    ulong[ulong] count;
+    ulong mode, last = 0;
+    //Construct Associative array with each element of numbs as the keys, and the count as the element associated with each number.
+    foreach (var; numbs) {
         if (var in count) {
             ++count[var];
         } else {
@@ -23,9 +22,11 @@ ulong getMode(ulong[] numbs) {
         }
     }
     //Find the largest value of the array and store it's key in big.
-    foreach (key, val, count) {
-        big = val;
-        if
+    foreach (key, val; count) {
+        if (val > last) {
+            mode = key;
+        }
+        last = val;
     }
-    return big;
-} */
+    return mode;
+}

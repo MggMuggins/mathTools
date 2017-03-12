@@ -18,7 +18,8 @@ ArgState getArgs (string[] args) {
 			"product", &argState.product,
 			"sort", &argState.sort,
 			"average", &argState.average,
-			"median", &argState.median);
+			"median", &argState.median,
+			"mode", &argState.mode);
 	} catch (std.conv.ConvException exc) {
 		writeln("Problem with args:");
 		writeln(exc.msg);

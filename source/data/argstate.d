@@ -8,6 +8,7 @@ struct ArgState {
 	bool gcf = false;
 	bool average = false;
 	bool median = false;
+	bool mode = false;
 	bool big = false;
 	bool small = false;
 	bool sum = false;

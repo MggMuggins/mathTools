@@ -12,7 +12,7 @@ void printOut (ulong[] numbs, ArgState argState) {
 	 * a tiny bit more RAM (or more than a tiny bit, since the size of the arguments
 	 * array is arbitrary).
 	 */
-	ulong big, small, sum, product, average, median, lcm, gcf;
+	ulong big, small, sum, product, average, median, mode, lcm, gcf;
 	ulong[] sorted;
 	//Required values for other functions//
 	if (argState.big || argState.lcm) {
@@ -52,5 +52,8 @@ void printOut (ulong[] numbs, ArgState argState) {
 	} if (argState.median) {
 		median = getMedian(sorted);
 		writeln("Median = ", median);
+	} if (argState.mode) {
+		mode = getMode(numbs);
+		writeln("Mode = ", mode);
 	}
 }
