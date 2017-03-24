@@ -4,11 +4,10 @@ module oprtn.gcf;
 ulong gcfOf (ulong[] numbs, ulong cand) {
 	//Needs Optimizations
 	++cand;
-	int i;
 	while (1) {
 	--cand;
-		for(i = 0; i < numbs.length; ++i) {
-			if (numbs[i] % cand != 0) {
+		foreach (i; numbs) {
+			if (i % cand != 0) {
 				break;
 			}
 		} if (i == numbs.length) {
@@ -16,4 +15,7 @@ ulong gcfOf (ulong[] numbs, ulong cand) {
 		}
 	}
 	return cand;
+	
+	//Base for Euclid's Algorithm
+	//int k = 0;
 }

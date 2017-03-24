@@ -4,7 +4,7 @@ module oprtn.quicksort;
 import std.stdio;
 
 /*
- * Pseudocode
+ * Pseudocode *
 algorithm quicksort(A, lo, hi) is
     if lo < hi then
         p := partition(A, lo, hi)
